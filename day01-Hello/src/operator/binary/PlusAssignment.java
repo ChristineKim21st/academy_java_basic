@@ -12,19 +12,19 @@ public class PlusAssignment {
 		int num = 0;
 		
 		//2.사용
-		System.out.println("초기 num의 값: "+ num);
+		System.out.println("초기 num의 값: "+ num);//0
 		
 		num += 1;
-		System.out.println("num += 1 수행 후 num: "+num);
+		System.out.println("num += 1 수행 후 num: "+num);//1
 
 		num = num + 1;
-		System.out.println("num = num + 1 수행 후 num: "+num);
+		System.out.println("num = num + 1 수행 후 num: "+num);//2
 
 		num += num + 1;
-		System.out.println("num += num + 1 수행 후 num: "+num);
+		System.out.println("num += num + 1 수행 후 num: "+num);//5
 
 		num *= num * 1;
-		System.out.println("num *= num * 1 수행 후 num: "+num);
+		System.out.println("num *= num * 1 수행 후 num: "+num);//25
 		
 	}
 
