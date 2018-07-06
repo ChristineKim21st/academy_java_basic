@@ -41,7 +41,7 @@ public class ArrayAndFor {
 		}
 		
 		//(4)모든 엘리먼트의 합을 계산 : foreach 구문
-		System.out.println("%n==원소의 합==");
+		System.out.println("==원소의 합==");
 		for(int number:numbers) {
 			summary += number;
 		}
