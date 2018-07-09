@@ -38,12 +38,12 @@ public class DefinemethodsTest {
 		
 		//7.
 		double input3 = methods.makeDouble(50.0);
-		System.out.printf("%f", input3);
+		System.out.printf("%.2f", input3);
 		System.out.printf("%n=============================%n");
 		
 		//8.
 		double input4 = methods.subtractFivePointFive(10.0);
-		System.out.printf("%f", input4);
+		System.out.printf("%.2f", input4);
 		System.out.printf("%n=============================%n");
 	
 		//9.
@@ -58,7 +58,7 @@ public class DefinemethodsTest {
 
 		//11.
 		double inputOf11 = methods.add(10.1, 12.5);
-		System.out.printf("%f", inputOf11);
+		System.out.printf("%.2f", inputOf11);
 		System.out.printf("%n=============================%n");
 		
 		//12.
@@ -71,7 +71,7 @@ public class DefinemethodsTest {
 		
 		//14.
 		double inputOf14 = methods.arithmetic(77.77, 11.1, "/");
-		System.out.printf("%f", inputOf14);
+		System.out.printf("%.2f", inputOf14);
 		System.out.printf("%n=============================%n");
 		
 		//15.
