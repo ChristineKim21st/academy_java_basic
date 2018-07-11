@@ -119,6 +119,8 @@ public class Warehouse {
 					newProducts[idx] = products[idx];
 				}
 			}
+			
+			this.products = newProducts;
 		}
 	}// method remove end
 	
@@ -127,7 +129,7 @@ public class Warehouse {
 	 * 리턴
 	 * @return
 	 */
-	public Product[] getAllProduct() {
+	public Product[] getAllProducts() {
 		return this.products;
 	}
 	

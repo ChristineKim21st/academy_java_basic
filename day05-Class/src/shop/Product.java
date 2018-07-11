@@ -56,7 +56,7 @@ public class Product {
 	}
 	
 	public void print() {
-		System.out.printf("제품 정보 [제품코드: %s, 제품이름: %s, 제품가격: %d, 재고수량: %d]%n", 
+		System.out.printf("제품 정보 [제품코드: %s, 제품이름: %s, 제품가격: %,6d, 재고수량: %3d]%n", 
 				prodCode, prodName, price, quantity);
 	}
 	
