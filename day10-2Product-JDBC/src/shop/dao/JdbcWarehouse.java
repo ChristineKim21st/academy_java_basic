@@ -49,7 +49,6 @@ public class JdbcWarehouse implements GeneralWarehouse {
 		try {
 			// 1. 드라이버 로드
 			Class.forName(DRIVER);
-			Class.forName(DRIVER);
 			
 			// 2. 커넥션 맺기
 			conn = DriverManager.getConnection(URL, USER, PASSWORD);

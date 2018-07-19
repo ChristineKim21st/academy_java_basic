@@ -215,6 +215,8 @@ public class Product {
 	// Object 클래스에서 나도 모르는 사이 상속받은
 	// toString() 메소드를 재정의 해보자.
 	// 1. 메소드 헤더가 동일 : 리턴타입 메소드이름 (매개변수 목록)
+	
+	//사람이 이해할 수 있는 언어로 객체를 작성하는 것
 	@Override
 	public String toString() {
 		String strProduct = String.format(

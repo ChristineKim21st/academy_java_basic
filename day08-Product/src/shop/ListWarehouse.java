@@ -47,7 +47,13 @@ public class ListWarehouse implements GeneralWarehouse {
 	@Override
 	public Product get(Product product) {
 		int getIndex = findProductIdx(product);
-		return products.get(getIndex);
+		Product finded = null; 
+		
+		if(getIndex > -1) {
+			//찾아 올 제품이 있다
+			finded = products.get(getIndex);
+		}
+		return finded;
 	}
 
 	@Override

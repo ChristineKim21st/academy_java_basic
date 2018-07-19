@@ -27,11 +27,12 @@ public class DriverLoadType5 {
  private static final String URL = "jdbc:oracle:thin:@//127.0.0.1:1521/XE";
  private static final String USER = "SCOTT";
  private static final String PASSWORD = "TIGER";
+private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 
- public static void main(String[] args) throws SQLException {
+ public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-	  // 1. 드라이버 로드 : 방법 1 : 드라이버 인스턴스 생성
-	  new OracleDriver();
+	  // 1. 드라이버 로드 : 방법 5 : 클래스를 바로 메모리에 로드하는 방법
+	  Class.forName(DRIVER);
 	  
 	  // 2. 커넥션 맺기
 	  Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);

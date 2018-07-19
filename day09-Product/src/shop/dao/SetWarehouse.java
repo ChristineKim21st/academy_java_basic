@@ -23,6 +23,8 @@ public class SetWarehouse implements GeneralWarehouse {
 		this.products = products;
 	}
 	
+	//set의 add에는 추가를 시도해보고
+	//동일한 객체가 있으면 false
 	// 3. 메소드
 	@Override
 	public int add(Product product) {

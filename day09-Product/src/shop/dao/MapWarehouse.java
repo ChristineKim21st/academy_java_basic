@@ -33,6 +33,8 @@ public class MapWarehouse implements GeneralWarehouse {
 		int addCnt = 0;
 		
 		// 같은 객체가 있는지 검사
+		// isExists의 return값이 true  : 같은 객체가 존재함
+		// isExists의 return값이 false : 같은 객체가 없음
 		if (!isExists(product)) {
 			products.put(product.getProdCode(), product);
 			addCnt++;
@@ -91,9 +93,11 @@ public class MapWarehouse implements GeneralWarehouse {
 
 	@Override
 	public List<Product> getAllProducts() {
+		//Collection은 순서나 규칙이 없는 그냥 집합체의 모습을 가짐
 		Collection<Product> collection = products.values();
+		//방의 사이즈
 		Product[] prodArr = new Product[collection.size()];
-		
+		//방에 value값을 차곡 차곡 넣어주는 것
 		return Arrays.asList(collection.toArray(prodArr));
 	}
 

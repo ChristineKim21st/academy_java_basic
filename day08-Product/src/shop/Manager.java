@@ -2,6 +2,12 @@ package shop;
 
 import java.util.List;
 
+import shop.reply.ErrorReply;
+import shop.reply.ListReply;
+import shop.reply.MessageReply;
+import shop.reply.ProductReply;
+import shop.reply.Reply;
+
 /**
  * 창고(Warehouse)를 사용하는
  * 매장 매니저를 나타내는 클래스
@@ -24,6 +30,8 @@ public class Manager {
 	
 	// 1. 멤버 변수 선언부
 	private GeneralWarehouse warehouse;
+	//작업 후 응답에 대한 변수
+	private Reply reply;
 	
 	// 2. 생성자 선언부
 	// (1) 매니저 기본 생성자
@@ -52,7 +60,19 @@ public class Manager {
 	 * @param product
 	 */
 	public void add(Product product) {
-		warehouse.add(product);
+		int addCnt = warehouse.add(product);
+		String message = null;
+		
+		if(addCnt > 0) {
+			//추가 성공한 경우
+			message = String.format("제품 정보[%s]  추가에 성공하였습니다", product.getProdCode());
+			reply = new MessageReply();
+		}else {
+			//추가 실패한 경우
+			message = String.format("제품 정보[%s] 추가에 실패하였습니다", product.getProdCode());
+			reply = new ErrorReply();
+		}
+		reply.reply(message);
 	}
 	
 	/**
@@ -61,7 +81,21 @@ public class Manager {
 	 * @param product
 	 */
 	public void set(Product product) {
-		warehouse.set(product);
+		int setIdx = warehouse.set(product);
+		String message = null;
+		
+		if(setIdx > -1) {
+			//수정이 성공한 경우
+			message = String.format("제품 정보[%s] 수정에 성공하였습니다", product.getProdCode());
+			reply = new MessageReply();
+		}else {
+			//수정이 실패한 경우
+			message = String.format("제품 정보[%s] 수정에 실패하였습니다", product.getProdCode());
+			reply = new ErrorReply();
+			
+		}
+		reply.reply(message);
+		
 	}
 	
 	/**
@@ -71,7 +105,20 @@ public class Manager {
 	 * @param product
 	 */
 	public void remove(Product product) {
-		warehouse.remove(product);
+		int rmIdx = warehouse.remove(product);
+		String message = null;
+		
+		if(rmIdx > -1) {
+			//삭제 성공한 경우
+			message = String.format("제품 정보[%s] 삭제에 성공하였습니다", product.getProdCode());
+			reply = new MessageReply();
+		}else {
+			//삭제 실패한 경우
+			message = String.format("제품 정보[%s] 삭제에 실패하였습니다", product.getProdCode());
+			reply = new ErrorReply();
+			
+		}
+		reply.reply(message);
 	}
 	
 	/**
@@ -80,8 +127,16 @@ public class Manager {
 	 * @param product
 	 * @return
 	 */
-	public Product get(Product product) {
-		return warehouse.get(product);
+	public void get(Product product) {
+		Product finded = warehouse.get(product);
+		
+		if(finded != null) {
+			reply = new ProductReply();
+			reply.reply(finded);
+		}else {
+			reply = new ErrorReply();
+			reply.reply("찾는 제품이"+ product.getProdCode() +"존재하지 않습니다.");
+		}
 	}
 	
 	
@@ -90,8 +145,10 @@ public class Manager {
 	 * 제품 정보 전체 목록을 조회할 수 있다
 	 * @return
 	 */
-	public List<Product> getAllProducts() {
-		return warehouse.getAllProducts();
+	public void getAllProducts() {
+		List<Product> products = warehouse.getAllProducts();
+		reply = new ListReply();
+		reply.reply(products);
 	}
 	
 	

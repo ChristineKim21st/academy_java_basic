@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  여기는 XML의 주석입니다 -->
+<!-- 학생 정보를 나타내는 XML 문서를 정의 -->
+<students>
+    <student>
+        <name>홍길동 </name>
+        <address>율도국</address>
+        <한마디>호부호영을 못하니...</한마디>
+        <전공>도술</전공>
+    </student>
+
+    <student>
+        <name>허균</name>
+        <address>한양</address>
+        <한마디>많이 읽어주세요...</한마디>
+        <전공></전공>
+    </student>
+</students>

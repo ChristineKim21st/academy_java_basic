@@ -2,6 +2,8 @@ package shop;
 
 import java.util.List;
 
+import shop.reply.ListReply;
+
 /**
  * 물건을 판매하는 매장을 나타내는 클래스
  * 매장에는 물건 판매를 위하여 최소 1명의
@@ -68,8 +70,8 @@ public class Shop {
 	 * @param product
 	 * @return
 	 */
-	public Product get(Product product) {
-		return manager.get(product);
+	public void get(Product product) {
+		manager.get(product);
 	}
 	
 	/**
@@ -77,8 +79,8 @@ public class Shop {
 	 * 매니저에게 부탁함
 	 * @return
 	 */
-	public List<Product> getAllProducts() {
-		return manager.getAllProducts();
+	public void getAllProducts() {
+		 manager.getAllProducts();
 	}
 	
 }

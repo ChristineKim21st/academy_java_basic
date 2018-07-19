@@ -33,15 +33,15 @@ import java.io.PrintWriter;
  */
 public class KeyboardInFileOut2 {
 
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		//1.Input node stream: System.in
-//		InputStream in = System.in;
+		InputStream in = System.in;
 		
 		//2.node stream -> filter stream :inputStream _> reader
-//		InputStreamReader ir = new InputStreamReader(System.in);
+		InputStreamReader ir = new InputStreamReader(in);
 		
-		//3.filter -> filter : 1주 ㄹ 단위 입력
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//3.filter -> filter : 1줄 단위 입력
+		BufferedReader br = new BufferedReader(ir);
 		
 		//===================입력 객체에 대한 선언
 		//5. output node writer

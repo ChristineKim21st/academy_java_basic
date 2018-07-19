@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 외부 DTD 선언 : 개인용 : SYSTEM -->
+<!DOCTYPE academy SYSTEM "academy.dtd">
+
+<academy>
+    <subject>SQL</subject>
+    <subject>XML</subject>
+  <!-- 외부 DTD인 academy.dtd 파일 -->
+</academy>

@@ -46,6 +46,8 @@ public class SwapArray {
 		for(int number: numbers) {
 			System.out.printf("%4d",number);
 		}
+		
+		
 	}
 	
 }

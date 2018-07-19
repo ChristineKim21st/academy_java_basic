@@ -48,11 +48,7 @@ public class ShopTest {
 		abcMart.set(adidas2);
 		
 		//4.수정된 아디다스 제품 수정 확인
-//		abcMart.get(new Product("S001", null, 0, 0)).print();
-		allProducts = abcMart.getAllProducts();
-		for(Product product : allProducts	) {
-			product.print();
-		}
+		abcMart.get(new Product("S001", null, 0, 0)).print();
 		
 		//5.판매종료할 제품 폐기
 		abcMart.remove(new Product("S001", null, 0, 0));
